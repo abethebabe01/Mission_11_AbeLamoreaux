@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Random random = new Random();
+    int randomNumber = random.Next(1, 100); // Generate a random number between 1 and 100
+}
+
+@model Book
+<div class="card m-1 p-1">
+    <h3>
+        @Model.Title
+        <span class="badge rounded-pill bg-primary text-white float-end">
+            Only @randomNumber copies left!
+        </span>
+    </h3>
+    <ul>
+        <li>By @Model.Author</li>
+        <li>Published by @Model.Publisher</li>
+        <li>ISBN: @Model.Isbn</li>
+        <li>@Model.Category</li>
+        <li>Pges:@Model.PageCount</li>
+        <li>$@Model.Price</li>
+
+
+    </ul>
+</div>
